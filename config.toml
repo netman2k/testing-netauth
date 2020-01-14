@@ -1,0 +1,25 @@
+[core]
+  home = "/var/lib/netauth"
+
+[crypto]
+  backend = "bcrypt"
+
+  [crypto.bcrypt]
+    cost = 15
+
+[db]
+  backend = "ProtoDB"
+
+[log]
+  level = "INFO"
+
+[pdb]
+  watch-interval = "1s"
+  watcher = false
+
+[plugin]
+  path = "plugins"
+
+[server]
+  bind = "0.0.0.0"
+  port = 1729

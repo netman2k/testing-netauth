@@ -1,0 +1,16 @@
+[Unit]
+Description=NetAuth daemon service
+Documentation=https://netauth.org
+Requires=network.target remote-fs.target 
+After=network.target remote-fs.target
+
+[Service]
+Type=simple
+User=netauth
+Group=netauth
+ExecStart=/usr/local/sbin/netauthd
+ExecStop=/bin/kill -s QUIT $MAINPID
+ExecReload=/bin/kill -s HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
